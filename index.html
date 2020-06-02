@@ -3,14 +3,131 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DEV JAVASCRIPT</title>
-    <link rel="stylesheet" href="./css/index.css" />
+    <title>Card Profiles</title>
+    <script
+      src="https://kit.fontawesome.com/e1eb6bad9d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/flip-card.css" />
   </head>
   <body>
-    <h1>Dev JavaScript</h1>
-    <p>
-      JavaScript Development Playground.
-    </p>
-    <script src="./js/index.js"></script>
+    <div class="container">
+      <div class="row">
+        <div class="column">
+          <h1>Card Profiles</h1>
+          <button id="btnRandomProfiles" type="button">
+            Load Random Profiles
+          </button>
+          <button id="btnClearOutput" type="button">Clear Output</button>
+          <br />
+          <br />
+        </div>
+      </div>
+      <div class="row">
+        <div class="column" id="output"></div>
+      </div>
+    </div>
+
+    <!-- Templates -->
+    <template id="template-card-profile">
+      <div class="card-container manual-flip">
+        <div class="card">
+          <div class="front">
+            <div class="cover">
+              <img
+                src="./img/melbourne-victoria-australia-596x337.png"
+                alt="Melbourne, Victoria, Australia"
+              />
+            </div>
+            <div class="user">
+              <img class="img-circle" src="./img/emily-browning-160x160.png" />
+            </div>
+            <div class="content">
+              <div class="main">
+                <h3 class="name">Emily Browning</h3>
+                <p class="profession">Australian actress</p>
+                <p class="text-center">
+                  Emily Jane Browning is an Australian actress. Browning made
+                  her film debut in the television film The Echo of Thunder, and
+                  subsequently appeared in television shows such as High Flyers,
+                  Something in the Air, and Blue Heelers.
+                </p>
+              </div>
+              <div class="footer">
+                <button class="btn btn-simple" onclick="rotateCard(this)">
+                  <i class="fa fa-mail-forward"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- end front panel -->
+          <div class="back">
+            <div class="header">
+              <h5 class="motto">
+                "When you act, you really have to give all of yourself, and if
+                you’re doing that purely for money, it’s not healthy."
+              </h5>
+            </div>
+            <div class="content">
+              <div class="main">
+                <h4 class="text-center">Job Description</h4>
+                <p class="text-center">
+                  Web design, Adobe Photoshop, HTML5, CSS3, Corel and many
+                  others...
+                </p>
+
+                <div class="stats-container">
+                  <div class="stats">
+                    <h4>235</h4>
+                    <p>
+                      Followers
+                    </p>
+                  </div>
+                  <div class="stats">
+                    <h4>114</h4>
+                    <p>
+                      Following
+                    </p>
+                  </div>
+                  <div class="stats">
+                    <h4>35</h4>
+                    <p>
+                      Projects
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer">
+              <button
+                class="btn btn-simple"
+                rel="tooltip"
+                title=""
+                onclick="rotateCard(this)"
+                data-original-title="Flip Card"
+              >
+                <i class="fa fa-reply"></i> Back
+              </button>
+              <div class="social-links text-center">
+                <a href="#" class="facebook"
+                  ><i class="fa fa-facebook fa-fw"></i
+                ></a>
+                <a href="#" class="google"
+                  ><i class="fa fa-google-plus fa-fw"></i
+                ></a>
+                <a href="#" class="twitter"
+                  ><i class="fa fa-twitter fa-fw"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <!-- end back panel -->
+        </div>
+        <!-- end card -->
+      </div>
+    </template>
+
+    <script src="./js/flip-card.js"></script>
   </body>
 </html>
